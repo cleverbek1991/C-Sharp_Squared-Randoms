@@ -23,11 +23,6 @@ namespace random
             {
                 Console.WriteLine($"random {i}");
                 squaredNumbers.Add(i * i);
-                if(i % 2 != 1)
-                {
-                    evenNumbers.Add(i);
-                }
-
             }
             // 2. With the resulting List, populate a new List that contains each number squared.
             foreach(var j in squaredNumbers)
@@ -35,9 +30,10 @@ namespace random
                 Console.WriteLine($"squared {j}");
             }
             // 3. Then remove any number that is odd from the list of squared numbers.
-            foreach (var x in evenNumbers)
+            squaredNumbers.RemoveAll(x => x % 2 != 0);
+            foreach (var x in squaredNumbers)
             {
-                Console.WriteLine($"even {x}");
+                Console.WriteLine($"even Numbers{x}");
             }
         }
     }
